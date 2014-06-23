@@ -67,7 +67,7 @@ function drush_nudata_enable($components = NULL) {
     if (count($components) > 1) {
       $success = module_enable($components);
       if ($success) {
-        drush_log(dt('@components enabled', array('@components' => join(',' $components))), 'success');
+        // drush_log(dt('@components enabled', array('@components' => join(',' $components))), 'success');
       }
       else{
         drush_log(dt('Some components were not enabled, please review their dependencies'), 'error');
