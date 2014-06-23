@@ -1,3 +1,19 @@
+.tagline {
+	font-family: "raleway", Helvetica, Arial;
+	color: white;
+	font-size: 60px;
+	line-height: 60px;
+	padding-left: 40px;
+	padding-top: 70px;
+	padding-bottom: 70px;
+
+}
+
+
+.group_home {
+	text-align: center;
+}
+
 /* line 5, ../../../../../../../../../lib/gems/1.8/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
@@ -209,7 +225,7 @@ body { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 .field-group-table-description .icon-info-sign:before { color: #999999; content: "\f05a"; font-family: "FontAwesome"; font-size: 2.5em; height: 30px; left: 0; margin: 10px 15px 0 0; padding: 6px 0; position: absolute; top: 0; width: 30px; }
 
 /* line 212, ../sass/partials/_node.scss */
-.region-content .block { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); background-color: white; margin-bottom: 20px; padding: 20px; }
+.region-content .block { background-color: white; margin-bottom: 20px;}
 
 /* line 215, ../sass/partials/_node.scss */
 .page-admin .region-content .block { -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; border: none; margin: 0; padding: 0; }
@@ -618,7 +634,7 @@ ul.action-links { margin: 1em 0; }
 @media (min-width: 768px) { /* line 36, ../sass/partials/_view.scss */
   .view-front-page-group-grid .span6, .view-front-page-group-grid .col-lg-6 { float: left; margin: 0; width: 50%; } }
 /* line 43, ../sass/partials/_view.scss */
-.view-front-page-group-grid .span6 span, .view-front-page-group-grid .col-lg-6 span { -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); background-color: white; margin-bottom: 20px; padding: 20px; display: block; overflow: hidden; padding: 10px; margin: 15px; min-height: 130px; }
+.view-front-page-group-grid .span6 span, .view-front-page-group-grid .col-lg-6 span {background-color: white; margin-bottom: 20px; padding: 20px; display: block; overflow: hidden; padding: 10px; margin: 15px; min-height: 130px; }
 /* line 51, ../sass/partials/_view.scss */
 .view-front-page-group-grid .span6 span .media-content, .view-front-page-group-grid .col-lg-6 span .media-content { padding: 0 10px 10px 120px; }
 /* line 54, ../sass/partials/_view.scss */
@@ -632,7 +648,7 @@ ul.action-links { margin: 1em 0; }
 .view-dataset .views-row { margin: 1.5em 0; }
 
 /* line 75, ../sass/partials/_view.scss */
-.view-groups-page .views-column { float: left; margin: 0; width: 50%; }
+.view-groups-page .views-column { text-align: center; margin: 0; width: 50%; }
 
 /* line 82, ../sass/partials/_view.scss */
 .view-group-block .views-field-title { font-size: 1.2em; font-weight: bold; }
