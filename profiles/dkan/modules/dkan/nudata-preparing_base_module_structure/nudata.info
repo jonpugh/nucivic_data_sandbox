@@ -1,7 +1,0 @@
-name = Nudata
-description = Layer of NUDATA functionality on top of dkan distro.
-core = 7.x
-
-dependencies[] = dkan_dataset
-dependencies[] = dkan_sitewide
-dependencies[] = dkan_datastore
