@@ -53,13 +53,18 @@ function theme_dkan_dataset_release_date_view($vars) {
  * Output the resource into the node content.
  */
 function theme_dkan_dataset_resource_view($vars) {
+  $output = '<h2>' . t('Data and Resources') . '</h2>';
   $node = entity_metadata_wrapper('node', $vars['node']);
   $nodes = $node->field_resources->value();
   $links = array();
-  $output = '<div property="dcat:distribution">';
+  $output .= '<div property="dcat:distribution">';
 
   if (isset($nodes)) {
     foreach ($nodes as $node) {
+      // Node could be empty if it has been deleted.
+      if (!$node) {
+        continue;
+      }
       $node_wrapper = entity_metadata_wrapper('node', $node);
       $body = $node_wrapper->body->value();
       $term = '';
@@ -75,7 +80,32 @@ function theme_dkan_dataset_resource_view($vars) {
       else {
         $term = '<span class="format-label" property="dc:format" data-format="data">Data</span>';
       }
-      $explore_link = l(t('Explore Data'), 'node/' . $node->nid, array('attributes' => array('class' => array('btn', 'btn-primary'))));
+      $explore_link = l(
+        t('Explore Data'),
+        'node/' . $node->nid,
+        array(
+          'attributes' => array(
+            'class' => array(
+              'btn',
+              'btn-primary',
+            ),
+          ),
+        )
+      );
+      $download_link = '';
+      if (isset($node->field_upload[LANGUAGE_NONE])) {
+        $url = file_create_url($node->field_upload[LANGUAGE_NONE][0]['uri']);
+        $download_link = l(
+          '<i class="fa fa-download"></i>',
+          $url,
+          array(
+            'html' => TRUE,
+            'attributes' => array(
+              'class' => array('btn', 'btn-primary'),
+            ),
+          )
+        );
+      }
       $dcat = '<div property="dcat:Distribution">';
       $links[] = $dcat . l($node->title . $term, 'node/' . $node->nid, array(
         'html' => TRUE,
@@ -84,10 +114,12 @@ function theme_dkan_dataset_resource_view($vars) {
           'title' => $node->title,
           'property' => 'dcat:accessURL',
         ))
-      ) . $desc . $explore_link . '</div>';
+      ) . $desc . '<span class="links">' . $explore_link . $download_link . '</span></div>';
     }
 
-    $output = theme('item_list', array('items' => $links, 'attributes' => array('class' => array('resource-list'))));
+    $output .= theme('item_list', array('items' => $links, 'attributes' => array('class' => array('resource-list'))));
+    // Close first dcat declaration.
+    $output .= '</div>';
   }
   return $output;
 }

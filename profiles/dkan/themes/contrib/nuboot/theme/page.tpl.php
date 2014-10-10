@@ -75,7 +75,12 @@
         <!-- #featured-inside -->
         <div class="featured-inside" class="clearfix">
             <div class="row">
-                <h1 class="tagline">More than just a data tool,<br>an Open Data Platform.</h1>
+                <div class="col-md-6">
+                  <?php print render($page['preface_first']); ?>
+                </div>
+                <div class="col-md-6">
+                  <?php print render($page['preface_second']); ?>
+                </div>
             </div>
         </div>
         <!-- EOF: #featured-inside -->
